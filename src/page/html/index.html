@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Home automation gang shit</title>
+    </head>
+    <body>
+        <div>
+            <h1>Lights Mode</h1>
+            <div>
+                <input type="radio" name="modeRadio" onchange="modeChange.night()"/>
+                <span>Night mode</span>
+            </div>
+            <div>
+                <input type="radio" name="modeRadio" onchange="modeChange.day()"/>
+                <span>Day mode</span>
+            </div>
+
+        </div>
+        <script type="text/javascript">
+            const endpoint = "http://localhost:3600";
+            var request = {
+                post: function (route, params) {
+                    var xhttp = new XMLHttpRequest();
+                    xhttp.onreadystatechange = function () {
+                        if (this.readyState == 4 && this.status == 200) {
+                            console.log(this.responseText);
+                        }
+                    };
+                    function stringifyParams(p) {
+                        let str = []
+                        Object.keys(p).forEach(function(k){
+                            str.push(k + "=" + p[k]);
+                        });
+                        return "?" + str.join("&")
+                    }
+                    xhttp.open("POST", endpoint + (route ? route : "/"), true);
+                    xhttp.setRequestHeader("Content-type", "application/json;charset=UTF-8");
+                    xhttp.send(JSON.stringify(params));
+                },
+                get: function(param) {
+                    
+                }
+            }
+            var modeChange = {
+                night: function() {
+                    request.post("/lights",{
+                        mode: 0,
+                    })
+                },
+                day: function() {
+
+                }
+            }
+        </script>
+    </body>
+</html>

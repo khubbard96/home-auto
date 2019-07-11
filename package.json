@@ -1,0 +1,23 @@
+{
+  "name": "home-auto",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "node ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/khubbard96/home-auto.git"
+  },
+  "author": "Kevin Hubbard",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/khubbard96/home-auto/issues"
+  },
+  "homepage": "https://github.com/khubbard96/home-auto#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1"
+  }
+}
