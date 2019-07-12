@@ -3,7 +3,7 @@ const app_config = require("../config/env.config").app;
 exports.config = function(app) {
     //routes go here
     app.get("/", function(req, res){
-        res.sendFile(__dirname + "/src/page/html/index.html");
+        res.sendFile(__dirname.replace("/src/app/routes","") + "/src/page/html/index.html");
     });
 
     app.get("/lights", function(req, res) {
