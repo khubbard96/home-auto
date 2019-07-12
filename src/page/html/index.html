@@ -45,10 +45,12 @@
                 night: function() {
                     request.post("/lights",{
                         mode: 0,
-                    })
+                    });
                 },
                 day: function() {
-
+                    request.post("/lights",{
+                        mode: 1,
+                    });
                 }
             }
         </script>
