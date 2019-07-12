@@ -33,4 +33,6 @@ app.listen(httpConfig.port, function () {
     console.log('app listening at port %s', httpConfig.port);
 });
 
+//console.log(__dirname);
+
 
